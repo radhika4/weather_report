@@ -1,6 +1,7 @@
 
 <?php					
 	if(isset($_POST['btn_submit'])) {
+		if($_POST['city']!="") {
 		 $city = $_POST['city'];
 		//$url = "https://api.openweathermap.org/data/2.5/weather?APPID=ef6cb58c7a27a57e03768fdf0377e2a6&zip=560015,IN";
 		$url = "https://api.openweathermap.org/data/2.5/weather?APPID=ef6cb58c7a27a57e03768fdf0377e2a6&q=".$city."";
@@ -21,6 +22,7 @@
 		curl_close($curl);
 		echo "<h3>Weather Report</h3>";
 		var_dump($resp);
+	}
 	}
 ?>
 										?> 
